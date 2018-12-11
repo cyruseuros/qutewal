@@ -39,7 +39,7 @@ if os.path.isfile(colors_absolute):
 
     ## Background color of the selected completion item.
     ## Type: QssColor
-    c.colors.completion.item.selected.bg = colors['special']['background']
+    c.colors.completion.item.selected.bg = colors['colors']['color5']
 
     ## Bottom border color of the selected completion item.
     ## Type: QssColor
@@ -166,7 +166,7 @@ if os.path.isfile(colors_absolute):
 
     ## Background color for the selected item in filename prompts.
     ## Type: QssColor
-    c.colors.prompts.selected.bg = colors['special']['background']
+    c.colors.prompts.selected.bg = colors['colors']['color5']
 
     ## Background color of the statusbar in caret mode.
     ## Type: QssColor
@@ -305,7 +305,7 @@ if os.path.isfile(colors_absolute):
 
     # ## Background color of selected even tabs.
     # ## Type: QtColor
-    c.colors.tabs.selected.even.bg = colors['special']['background']
+    c.colors.tabs.selected.even.bg = colors['colors']['color4']
 
     # ## Foreground color of selected even tabs.
     # ## Type: QtColor
@@ -313,7 +313,7 @@ if os.path.isfile(colors_absolute):
 
     # ## Background color of selected odd tabs.
     # ## Type: QtColor
-    c.colors.tabs.selected.odd.bg = colors['special']['background']
+    c.colors.tabs.selected.odd.bg = colors['colors']['color4']
 
     # ## Foreground color of selected odd tabs.
     # ## Type: QtColor
