@@ -1,5 +1,6 @@
 import json
 import os
+# import subprocess
 
 home = os.getenv('HOME')
 colors_relative = '.cache/wal/colors.json'
@@ -15,7 +16,8 @@ if os.path.isfile(colors_absolute):
 
     ## Bottom border color of the completion widget category headers.
     ## Type: QssColor
-    c.colors.completion.category.border.bottom = colors['special']['background']
+    c.colors.completion.category.border.bottom = colors['special'][
+        'background']
 
     ## Top border color of the completion widget category headers.
     ## Type: QssColor
@@ -48,7 +50,8 @@ if os.path.isfile(colors_absolute):
 
     ## Top border color of the completion widget category headers.
     ## Type: QssColor
-    c.colors.completion.item.selected.border.top = colors['special']['background']
+    c.colors.completion.item.selected.border.top = colors['special'][
+        'background']
 
     ## Foreground color of the selected completion item.
     ## Type: QtColor
@@ -323,3 +326,7 @@ if os.path.isfile(colors_absolute):
     ## color)
     ## Type: QtColor
     c.colors.webpage.bg = colors['special']['background']
+
+    ## start qutefy to refresh colors on the fly
+    # qutefyd = subprocess.Popen(['./qutefy.py', colors_absolute],
+    #                            preexec_fn=os.setsid)
