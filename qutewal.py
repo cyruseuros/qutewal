@@ -1,6 +1,7 @@
 import json
 import os
-# import subprocess
+
+qutewal_dynamic_loading = True
 
 home = os.getenv('HOME')
 colors_relative = '.cache/wal/colors.json'
@@ -327,6 +328,12 @@ if os.path.isfile(colors_absolute):
     # Type: QtColor
     c.colors.webpage.bg = colors['special']['background']
 
-    # start iqutefy to refresh colors on the fly
-    # iqutefyd = subprocess.Popen(['./iqutefy.py', colors_absolute],
-    #                             start_new_session=True)
+    if qutewal_dynamic_loading or bool(os.getenv('QUTEWAL_DYNAMIC_LOADING')):
+        import signal
+        import subprocess
+        import prctl
+
+        # start iqutefy to refresh colors on the fly
+        iqutefyd = subprocess.Popen(
+            ['./iqutefy.py', colors_absolute],
+            preexec_fn=lambda: prctl.set_pdeathsig(signal.SIGTERM))

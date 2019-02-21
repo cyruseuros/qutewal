@@ -8,6 +8,7 @@ verify_ssl = true
 [packages]
 inotify-simple = "*"
 psutil = "*"
+python-prctl = "*"
 
 [requires]
 python_version = "3.7"
