@@ -1,14 +1,21 @@
 #!/usr/bin/env python3
 
 import os
+import signal
 import sys
 
 import daemon
 from daemon.pidfile import PIDLockFile
 from inotify_simple import INotify, flags
 
+pidfile='/tmp/qutefy.pid'
+
+def cleanup():
+    os.remove(pidfile)
+
 with daemon.DaemonContext(
-        pidfile=PIDLockFile('/tmp/qutefy.pid')
+        pidfile=PIDLockFile(pidfile),
+        signal_map={signal.SIGTERM: cleanup}
 ):
     inotify = INotify()
     watch_flags = flags.CREATE | flags.MODIFY
