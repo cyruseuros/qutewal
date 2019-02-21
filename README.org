@@ -38,22 +38,23 @@ off from
 
 ** Dynamic Loading
 Dynamic loading depends on =inotify-simple=, =psutil=, and =python-prctl=. You
-need to make sure they are on your =$PATH=. You can do this in one of 3 ways:
+need to make sure they are on your =$PATH=. You can do this in one of 4 ways:
 1. Install the packages using your distro's package manager
 2. Run =pip install --user -r requirements.txt= inside the repo folder and add
    =~/.local/bin= to your =$PATH= in your shell of choice:
    + [[https://unix.stackexchange.com/questions/26047/how-to-correctly-add-a-path-to-path][bash]]
    + [[https://stackoverflow.com/questions/11530090/adding-a-new-entry-to-the-path-variable-in-zsh][zsh]]
-     (2^nd answer)
+     (second answer)
    + [[https://stackoverflow.com/questions/7064053/add-a-relative-path-to-path-on-fish-startup][fish]]
 3. Run =pipenv install= inside the repo folder and add the generated virtual
    environments to your =$PATH= as shown above.
 4. NOTE: *NOT RECOMMENDED*. Run =sudo pip install -r requirements.txt= inside
    the repo folder.
-5. Either set the variable =qutewal_dynamic_loading= to =True= inside
-   =qutewal.py=, or export the environment variable =QUTEWAL_DYNAMIC_LOADING= as
-   =True= using your shell of choice:
-   + bash/zsh :: =export QUTEWAL_DYNAMIC_LOADING\=True=
+
+Finally, either set the variable =qutewal_dynamic_loading= to =True= inside
+=qutewal.py=, or export the environment variable =QUTEWAL_DYNAMIC_LOADING= as
+=True= using your shell of choice:
+   + bash/zsh :: =export QUTEWAL_DYNAMIC_LOADING=True=
    + fish :: =set -Ux QUTEWAL_DYNAMIC_LOADING True=
 
 ** Screenshots
