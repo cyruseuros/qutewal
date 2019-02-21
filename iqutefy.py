@@ -5,6 +5,7 @@ import signal
 import sys
 
 import daemon
+import psutil
 from daemon.pidfile import PIDLockFile
 from inotify_simple import INotify, flags
 
@@ -21,6 +22,12 @@ with daemon.DaemonContext(
     watch_flags = flags.CREATE | flags.MODIFY
     wd = inotify.add_watch(sys.argv[1], watch_flags)
 
-    while True:
-        for event in inotify.read():
-            os.system('qutebrowser :config-source')
+    process = psutil.Process()
+    with process.oneshot():
+        ## check if qutebrowser instance is still running
+        while process.parent().status() == psutil.STATUS_RUNNING:
+            for event in inotify.read():
+                os.system('qutebrowser :config-source')
+
+        ## kill after qutebrowser exits
+        cleanup()

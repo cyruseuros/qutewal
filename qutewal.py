@@ -327,6 +327,5 @@ if os.path.isfile(colors_absolute):
     ## Type: QtColor
     c.colors.webpage.bg = colors['special']['background']
 
-    ## start qutefy to refresh colors on the fly
-    # qutefyd = subprocess.Popen(['./qutefy.py', colors_absolute],
-    #                            preexec_fn=os.setsid)
+    ## start iqutefy to refresh colors on the fly
+    # iqutefyd = subprocess.Popen(['./iqutefy.py', colors_absolute])
