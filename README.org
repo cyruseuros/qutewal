@@ -1,0 +1,26 @@
+* Pywal Qutebrowser Theme
+  :PROPERTIES:
+  :CUSTOM_ID: pywal-qutebrowser-theme
+  :END:
+
+A theme for [[https://qutebrowser.org][Qutebrowser]] using
+[[https://github.com/dylanaraps/pywal][Pywal]] colorschemes shamelessly
+ripped off from
+[[https://github.com/Linuus/nord-qutebrowser/blob/master/nord-qutebrowser.py][nord-qutebrowser]].
+
+** Install
+   :PROPERTIES:
+   :CUSTOM_ID: install
+   :END:
+
+1. Clone this repo or copy =qutewal.py=
+2. Symlink (or just copy) the file =qutewal.py= to your
+   =~/.config/qutebrowser/= directory.
+3. Add =config.source('qutewal.py')= at the /end/ of you =config.py=
+   file.
+
+[[./screenshots/2018-12-12-084533_1920x1080_scrot.png]]
+[[./screenshots/2018-12-12-084505_1920x1080_scrot.png]]
+[[./screenshots/2018-12-12-084618_1920x1080_scrot.png]]
+[[./screenshots/2018-12-12-084731_1920x1080_scrot.png]]
+[[./screenshots/2018-12-12-084809_1920x1080_scrot.png]]
