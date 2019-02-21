@@ -1,10 +1,15 @@
 #!/usr/bin/env python3
 
-import os, sys
-from inotify_simple import INotify, flags
-import daemon
+import os
+import sys
 
-with daemon.DaemonContext():
+import daemon
+from daemon.pidfile import PIDLockFile
+from inotify_simple import INotify, flags
+
+with daemon.DaemonContext(
+        pidfile=PIDLockFile('/tmp/qutefy.pid')
+):
     inotify = INotify()
     watch_flags = flags.CREATE | flags.MODIFY
     wd = inotify.add_watch(sys.argv[1], watch_flags)
