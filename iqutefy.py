@@ -22,7 +22,7 @@ pidfile = '/tmp/iqutefy.pid'
 # if so, remove it
 if os.path.isfile(pidfile):
     with open(pidfile) as pf:
-        pid = int(pf.readline)
+        pid = int(pf.readline())
     if not psutil.pid_exists(pid):
         os.remove(pidfile)
 

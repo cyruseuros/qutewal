@@ -335,5 +335,8 @@ if os.path.isfile(colors_absolute):
 
         # start iqutefy to refresh colors on the fly
         iqutefyd = subprocess.Popen(
-            ['./iqutefy.py', colors_absolute],
+            [
+                os.path.expanduser('~/.config/qutebrowser/iqutefy.py'),
+                colors_absolute
+            ],
             preexec_fn=lambda: prctl.set_pdeathsig(signal.SIGTERM))
