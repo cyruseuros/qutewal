@@ -1,7 +1,7 @@
 import json
 import os
 
-qutewal_dynamic_loading = True
+qutewal_dynamic_loading = False
 
 home = os.getenv('HOME')
 colors_relative = '.cache/wal/colors.json'
