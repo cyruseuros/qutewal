@@ -4,9 +4,11 @@
   :PROPERTIES:
   :CUSTOM_ID: pywal-qutebrowser-theme
   :END:
+  
+NOTE: This project has been permanently moved to [[https://gitlab.com/jjzmajic/qutewal][GitLab]]. You know why.
 
 =qutewal= is a [[https://github.com/dylanaraps/pywal][pywal]]-based theme for [[https://qutebrowser.org][Qutebrowser]], the structure of which was
-shamelessly *borrowed* from [[https://github.com/Linuus/nord-qutebrowser/blob/master/nord-qutebrowser.py][nord-qutebrowser]].
+shamelessly /borrowed/ from [[https://github.com/Linuus/nord-qutebrowser/blob/master/nord-qutebrowser.py][nord-qutebrowser]].
 
 * Installation
    :PROPERTIES:
