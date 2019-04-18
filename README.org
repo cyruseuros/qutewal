@@ -58,3 +58,6 @@ Finally, either set the variable =qutewal_dynamic_loading= to =True= inside
 =True= using your shell of choice *at login*:
    + bash/zsh :: =export QUTEWAL_DYNAMIC_LOADING=True=
    + fish :: =set -Ux QUTEWAL_DYNAMIC_LOADING True=
+
+* TODOs
++ Extend =pywal= palette with extra shades, like [[https://gitlab.com/jjzmajic/ewal][ewal]].
