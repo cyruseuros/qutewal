@@ -5,7 +5,7 @@ qutewal_dynamic_loading = False
 
 home = os.getenv('HOME')
 colors_relative = '.cache/wal/colors.json'
-daemon_relative = '.config/qutebrowser/iqutefy.py'
+daemon_relative = '.config/qutebrowser/qutewald.py'
 colors_absolute = os.path.join(home, colors_relative)
 daemon_absolute = os.path.join(home, daemon_relative)
 
@@ -336,6 +336,6 @@ if os.path.isfile(colors_absolute):
         import prctl
 
         # start iqutefy to refresh colors on the fly
-        iqutefyd = subprocess.Popen(
+        qutewald = subprocess.Popen(
             [daemon_absolute, colors_absolute],
             preexec_fn=lambda: prctl.set_pdeathsig(signal.SIGTERM))
