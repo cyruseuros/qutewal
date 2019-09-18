@@ -1,5 +1,6 @@
 #+ATTR_HTML: :style margin-left: auto; margin-right: auto;
 [[./scrots/qutewal.gif]]
+
 * Summary
   :PROPERTIES:
   :CUSTOM_ID: pywal-qutebrowser-theme
@@ -26,7 +27,7 @@ shamelessly /borrowed/ from [[https://github.com/Linuus/nord-qutebrowser/blob/ma
 1. Clone this repository wherever you find it most convenient
 2. Copy =qutewal.py= into your =~/.config/qutebrowser= directory.
 3. If you wish to dynamically reload your `Qutebrowser` colorscheme, also copy
-   =iqutefy.py= into the same directory and follow the steps under [[Dynamic
+   =qutewald.py= into the same directory and follow the steps under [[Dynamic
    Loading][Dynamic Loading]].
 2. Add =config.source('qutewal.py')= at the /end/ of you =config.py=
    file.
@@ -34,7 +35,7 @@ shamelessly /borrowed/ from [[https://github.com/Linuus/nord-qutebrowser/blob/ma
 1. Clone this repository wherever you find it most convenient
 2. Symling (=ln -s=) =qutewal.py= into your =~/.config/qutebrowser= directory.
 3. If you wish to dynamically reload your `Qutebrowser` colorscheme, also symlink
-   =iqutefy.py= into the same directory and follow the steps under [[Dynamic Loading][Dynamic Loading]].
+   =qutewald.py= into the same directory and follow the steps under [[Dynamic Loading][Dynamic Loading]].
 2. Add =config.source('qutewal.py')= at the /end/ of you =config.py=
    file.
 
@@ -58,6 +59,16 @@ Finally, either set the variable =qutewal_dynamic_loading= to =True= inside
 =True= using your shell of choice *at login*:
    + bash/zsh :: =export QUTEWAL_DYNAMIC_LOADING=True=
    + fish :: =set -Ux QUTEWAL_DYNAMIC_LOADING True=
+
+Also note that this will only work on Linux, because other *nix kernels do not
+support killing orphaned children on parent death without the processes talking
+to eachother. For the curious, this is the code snippet that tells the kernel to
+do that:
+#+BEGIN_SRC python
+qutewald = subprocess.popen(
+    [daemon_absolute, colors_absolute],
+    preexec_fn=lambda: prctl.set_pdeathsig(signal.sigterm))
+#+END_SRC
 
 * TODOs
 + Extend =pywal= palette with extra shades, like [[https://gitlab.com/jjzmajic/ewal][ewal]].
